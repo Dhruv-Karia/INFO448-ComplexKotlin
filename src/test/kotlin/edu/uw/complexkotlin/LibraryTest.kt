@@ -17,7 +17,43 @@ class LibraryTest {
         assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZ", fizzbuzz(1..12))
     }
 
-    @Test fun r1Test() {
+    // EXTRA CREDIT 1
+
+    @Test fun fizzbuzzToFifty() {
+        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZ", fizzbuzz(1..50))
+    }
+
+    @Test fun fizzbuzzToHundred() {
+        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZ", fizzbuzz(1..100))
+    }
+
+    // EXTRA CREDIT 2
+
+    @Test fun fizzbuzzEXTRAToFifteen() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZ", fizzbuzzEXTRACREDIT(1..15))
+    }
+    @Test fun fizzbuzzEXTRAToTwelve() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZ", fizzbuzzEXTRACREDIT(1..12))
+    }
+
+    @Test fun fizzbuzzEXTRAToFifty() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZDOH!BUZZ", fizzbuzzEXTRACREDIT(1..50))
+    }
+
+    // EXTRA CREDIT 3
+
+    @Test fun fizzbuzzgenTest15() {
+        val customFizzBuzz = fizzbuzzgen(mapOf(3 to "FIZZ", 5 to "BUZZ"))
+        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZ", customFizzBuzz(1..15))
+    }
+    
+    @Test fun fizzbuzzgenTest50() {
+        val customFizzBuzz = fizzbuzzgen(mapOf(3 to "FIZZ", 5 to "BUZZ"))
+        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZ", customFizzBuzz(1..50))
+    }
+
+
+     @Test fun r1Test() {
         assertEquals(">>> FOO: {BAR}", r1())
     }
     @Test fun r2Test() {
@@ -41,8 +77,9 @@ class LibraryTest {
         assertEquals("Allow me to suggest an idea...", seneca.toString())
     }
 
+
     @Test fun commandTests() {
         assertEquals("", Command("")(""))
         assertEquals("> Hello!", Command("> ")("Hello!"))
-    }
+    } 
 }
